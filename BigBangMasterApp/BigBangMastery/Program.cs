@@ -28,19 +28,19 @@ class Program
             }
         }
 
-        if (gameMode == 1)
-        {
-            randomComputerPlayer = new RandomComputerPlayer(GameConstants.ChoicesRPS);
-            lastChoiceComputerPlayer = new LastChoiceComputerPlayer(GameConstants.ChoicesRPS);
-        }
-        else
-        {
-            randomComputerPlayer = new RandomComputerPlayer(GameConstants.ChoicesRPSLS);
-            lastChoiceComputerPlayer = new LastChoiceComputerPlayer(GameConstants.ChoicesRPSLS);
-        }
-
         try
         {
+            if (gameMode == 1)
+            {
+                randomComputerPlayer = new RandomComputerPlayer(GameConstants.ChoicesRPS);
+                lastChoiceComputerPlayer = new LastChoiceComputerPlayer(GameConstants.ChoicesRPS);
+            }
+            else
+            {
+                randomComputerPlayer = new RandomComputerPlayer(GameConstants.ChoicesRPSLS);
+                lastChoiceComputerPlayer = new LastChoiceComputerPlayer(GameConstants.ChoicesRPSLS);
+            }
+
             Game game = new Game(gameMode, randomComputerPlayer, lastChoiceComputerPlayer);
             game.Play();
         }

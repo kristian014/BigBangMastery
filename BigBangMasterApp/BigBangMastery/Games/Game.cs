@@ -22,7 +22,6 @@ namespace BigBangMastery.Games
                 _choices = GameConstants.ChoicesRPSLS;
             }
 
-            GameHelpers.ValidateChoicesLength(_choices);
             _randomComputerPlayer = randomComputerPlayer;
             _lastChoiceComputerPlayer = lastChoiceComputerPlayer;
         }

@@ -1,19 +1,22 @@
-﻿using BigBangMastery.Players.Interfaces;
+﻿using BigBangMastery.Helpers;
+using BigBangMastery.Players.Interfaces;
 
 namespace BigBangMastery.Players
 {
     public class LastChoiceComputerPlayer : IPlayer
     {
-        private string[] choices;
+        private string[] _choices;
 
         public LastChoiceComputerPlayer(string[] choices)
         {
-            this.choices = choices;
+            _choices = choices;
+
+            GameHelpers.ValidateChoicesLength(_choices);
         }
 
         public string GetChoice(string lastUserChoice)
         {
-            return lastUserChoice ?? choices[new Random().Next(choices.Length)];
+            return lastUserChoice ?? _choices[new Random().Next(_choices.Length)];
         }
     }
 }

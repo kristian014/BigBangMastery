@@ -1,4 +1,5 @@
-﻿using BigBangMastery.Players.Interfaces;
+﻿using BigBangMastery.Helpers;
+using BigBangMastery.Players.Interfaces;
 
 namespace BigBangMastery.Players
 {
@@ -10,6 +11,8 @@ namespace BigBangMastery.Players
         public RandomComputerPlayer(string[] choices)
         {
             _choices = choices;
+
+            GameHelpers.ValidateChoicesLength(_choices);
         }
 
         public string GetChoice(string lastUserChoice)
