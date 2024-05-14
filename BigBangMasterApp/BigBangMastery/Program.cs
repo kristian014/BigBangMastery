@@ -41,7 +41,7 @@ class Program
                 lastChoiceComputerPlayer = new LastChoiceComputerPlayer(GameConstants.ChoicesRPSLS);
             }
 
-            Game game = new Game(gameMode, randomComputerPlayer, lastChoiceComputerPlayer);
+            Game game = GameInitializer.InitializeGame(gameMode, randomComputerPlayer, lastChoiceComputerPlayer);
             game.Play();
         }
         catch (InvalidOperationException ex)

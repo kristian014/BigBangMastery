@@ -11,6 +11,14 @@ namespace BigBangMastery.Games
         private readonly IPlayer _randomComputerPlayer;
         private readonly IPlayer _lastChoiceComputerPlayer;
 
+        public Game(string[] choices, IPlayer randomComputerPlayer, IPlayer lastChoiceComputerPlayer)
+        {
+            _choices = choices ?? throw new ArgumentNullException(nameof(choices));
+            _randomComputerPlayer = randomComputerPlayer ?? throw new ArgumentNullException(nameof(randomComputerPlayer));
+            _lastChoiceComputerPlayer = lastChoiceComputerPlayer ?? throw new ArgumentNullException(nameof(lastChoiceComputerPlayer));
+            GameHelpers.ValidateChoicesLength(_choices);
+        }
+
         public Game(int gameMode, IPlayer randomComputerPlayer, IPlayer lastChoiceComputerPlayer)
         {
             if (gameMode == 1)
