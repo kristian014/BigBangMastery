@@ -19,21 +19,6 @@ namespace BigBangMastery.Games
             GameHelpers.ValidateChoicesLength(_choices);
         }
 
-        public Game(int gameMode, IPlayer randomComputerPlayer, IPlayer lastChoiceComputerPlayer)
-        {
-            if (gameMode == 1)
-            {
-                _choices = GameConstants.ChoicesRPS;
-            }
-            else
-            {
-                _choices = GameConstants.ChoicesRPSLS;
-            }
-
-            _randomComputerPlayer = randomComputerPlayer;
-            _lastChoiceComputerPlayer = lastChoiceComputerPlayer;
-        }
-
         public void Play()
         {
             while (true)

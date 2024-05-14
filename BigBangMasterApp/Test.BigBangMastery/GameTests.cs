@@ -17,7 +17,7 @@ namespace Test.BigBangMastery
         {
             _randomPlayer = new RandomComputerPlayer(GameConstants.ChoicesRPS);
             _lastChoicePlayer = new LastChoiceComputerPlayer(GameConstants.ChoicesRPS);
-            _game = new Game(1, _randomPlayer, _lastChoicePlayer);
+            _game = GameInitializer.InitializeGame(1, _randomPlayer, _lastChoicePlayer);
         }
 
         [Test]
