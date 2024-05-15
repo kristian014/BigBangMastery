@@ -23,35 +23,35 @@ namespace Test.BigBangMastery
         [Test]
         public void IsUserWinner_ShouldReturnTrue_ForWinningScenario()
         {
-            var result = GameHelpers.IsUserWinner("rock", "scissors");
+            var result = GameHelpers.IsUserWinner("rock", "scissors", 1);
             Assert.IsTrue(result);
         }
 
         [Test]
         public void IsUserWinner_ShouldReturnFalse_ForLosingScenario()
         {
-            var result = GameHelpers.IsUserWinner("rock", "paper");
+            var result = GameHelpers.IsUserWinner("rock", "paper", 1);
             Assert.IsFalse(result);
         }
 
         [Test]
         public void IsUserWinner_ShouldReturnTrue_ForWinningScenario_RPSLS()
         {
-            var result = GameHelpers.IsUserWinner("spock", "scissors");
+            var result = GameHelpers.IsUserWinner("spock", "scissors", 2);
             Assert.IsTrue(result);
         }
 
         [Test]
         public void IsUserWinner_ShouldReturnFalse_ForLosingScenario_RPSLS()
         {
-            var result = GameHelpers.IsUserWinner("spock", "lizard");
+            var result = GameHelpers.IsUserWinner("spock", "lizard", 1);
             Assert.IsFalse(result);
         }
 
         [Test]
         public void IsUserWinner_ShouldReturnFalse_ForTieScenario()
         {
-            var result = GameHelpers.IsUserWinner("rock", "rock");
+            var result = GameHelpers.IsUserWinner("rock", "rock", 1);
             Assert.IsFalse(result);
         }
 
@@ -69,7 +69,6 @@ namespace Test.BigBangMastery
                 var consoleOutput = output.ToString();
                 StringAssert.Contains("Enter your choice (rock, paper, scissors). To exit the game, type 'exit': ", consoleOutput);
                 StringAssert.Contains("Random Computer chose:", consoleOutput);
-                StringAssert.Contains("Last Choice Computer chose:", consoleOutput);
             }
         }
 

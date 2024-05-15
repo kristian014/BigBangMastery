@@ -4,13 +4,13 @@ namespace BigBangMastery.Helpers
 {
     public static class GameHelpers
     {
-        public static void PrintResult(string userChoice, string computerChoice)
+        public static void PrintResult(string userChoice, string computerChoice, int gameMode)
         {
             if (userChoice.Equals(computerChoice))
             {
                 Console.WriteLine("It's a tie!");
             }
-            else if (IsUserWinner(userChoice, computerChoice))
+            else if (IsUserWinner(userChoice, computerChoice, gameMode))
             {
                 Console.WriteLine("You win!");
             }
@@ -20,12 +20,23 @@ namespace BigBangMastery.Helpers
             }
         }
 
-        public static bool IsUserWinner(string userChoice, string computerChoice)
+        public static bool IsUserWinner(string userChoice, string computerChoice, int gameMode)
         {
-            if (!string.IsNullOrEmpty(userChoice) && !string.IsNullOrEmpty(computerChoice) && GameConstants.WinningConditions.TryGetValue(userChoice, out var winningChoices))
+            if (gameMode == 1)
             {
-                return winningChoices.Contains(computerChoice);
+                if (!string.IsNullOrEmpty(userChoice) && !string.IsNullOrEmpty(computerChoice) && GameConstants.WinningConditionsRPS.TryGetValue(userChoice, out var winningChoices))
+                {
+                    return winningChoices.Contains(computerChoice);
+                }
             }
+            else if (gameMode == 2)
+            {
+                if (!string.IsNullOrEmpty(userChoice) && !string.IsNullOrEmpty(computerChoice) && GameConstants.WinningConditionsRPSLS.TryGetValue(userChoice, out var winningChoices))
+                {
+                    return winningChoices.Contains(computerChoice);
+                }
+            }
+            
             return false;
         }
 

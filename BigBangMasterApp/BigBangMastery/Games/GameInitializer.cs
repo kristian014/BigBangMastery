@@ -8,7 +8,7 @@ namespace BigBangMastery.Games
         public static Game InitializeGame(int gameMode, IPlayer randomComputerPlayer, IPlayer lastChoiceComputerPlayer)
         {
             string[] choices = gameMode == 1 ? GameConstants.ChoicesRPS : GameConstants.ChoicesRPSLS;
-            return new Game(choices, randomComputerPlayer, lastChoiceComputerPlayer);
+            return new Game(choices, randomComputerPlayer, lastChoiceComputerPlayer, gameMode);
         }
     }
 }

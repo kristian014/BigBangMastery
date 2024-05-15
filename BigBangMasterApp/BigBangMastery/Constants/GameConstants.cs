@@ -5,7 +5,14 @@
         public static readonly string[] ChoicesRPS = { "rock", "paper", "scissors" };
         public static readonly string[] ChoicesRPSLS = { "rock", "paper", "scissors", "lizard", "spock" };
 
-        public static readonly Dictionary<string, string[]> WinningConditions = new Dictionary<string, string[]>
+        public static readonly Dictionary<string, string[]> WinningConditionsRPS = new Dictionary<string, string[]>
+        {
+            { "rock", new string[] { "scissors" } },
+            { "paper", new string[] { "rock" } },
+            { "scissors", new string[] { "paper" } }
+        };
+
+        public static readonly Dictionary<string, string[]> WinningConditionsRPSLS = new Dictionary<string, string[]>
         {
             { "rock", new string[] { "scissors", "lizard" } },
             { "paper", new string[] { "rock", "spock" } },

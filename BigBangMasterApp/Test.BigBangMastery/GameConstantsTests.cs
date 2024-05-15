@@ -22,14 +22,14 @@ namespace Test.BigBangMastery
         [Test]
         public void WinningConditions_ShouldContainRock()
         {
-            Assert.IsTrue(GameConstants.WinningConditions.ContainsKey("rock"));
+            Assert.IsTrue(GameConstants.WinningConditionsRPS.ContainsKey("rock"));
         }
 
         [Test]
         public void WinningConditions_ShouldHaveCorrectValuesForRock()
         {
             var expected = new[] { "scissors", "lizard" };
-            CollectionAssert.AreEquivalent(expected, GameConstants.WinningConditions["rock"]);
+            CollectionAssert.AreEquivalent(expected, GameConstants.WinningConditionsRPSLS["rock"]);
         }
     }
 }
