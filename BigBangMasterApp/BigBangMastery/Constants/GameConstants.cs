@@ -2,23 +2,23 @@
 {
     public class GameConstants
     {
-        public static readonly string[] ChoicesRPS = { "rock", "paper", "scissors" };
-        public static readonly string[] ChoicesRPSLS = { "rock", "paper", "scissors", "lizard", "spock" };
+        public static readonly string[] ChoicesRPS = { ChoiceConstants.Rock, ChoiceConstants.Paper, ChoiceConstants.Scissors };
+        public static readonly string[] ChoicesRPSLS = { ChoiceConstants.Rock, ChoiceConstants.Paper, ChoiceConstants.Scissors, ChoiceConstants.Lizard, ChoiceConstants.Spock };
 
         public static readonly Dictionary<string, string[]> WinningConditionsRPS = new Dictionary<string, string[]>
         {
-            { "rock", new string[] { "scissors" } },
-            { "paper", new string[] { "rock" } },
-            { "scissors", new string[] { "paper" } }
+            { ChoiceConstants.Rock, new string[] { ChoiceConstants.Scissors } },
+            { ChoiceConstants.Paper, new string[] { ChoiceConstants.Rock } },
+            { ChoiceConstants.Scissors, new string[] { ChoiceConstants.Paper } }
         };
 
         public static readonly Dictionary<string, string[]> WinningConditionsRPSLS = new Dictionary<string, string[]>
         {
-            { "rock", new string[] { "scissors", "lizard" } },
-            { "paper", new string[] { "rock", "spock" } },
-            { "scissors", new string[] { "paper", "lizard" } },
-            { "lizard", new string[] { "spock", "paper" } },
-            { "spock", new string[] { "scissors", "rock" } }
+            { ChoiceConstants.Rock, new string[] { ChoiceConstants.Scissors, ChoiceConstants.Lizard } },
+            { ChoiceConstants.Paper, new string[] { ChoiceConstants.Rock, ChoiceConstants.Spock } },
+            { ChoiceConstants.Scissors, new string[] { ChoiceConstants.Paper, ChoiceConstants.Lizard } },
+            { ChoiceConstants.Lizard, new string[] { ChoiceConstants.Spock, ChoiceConstants.Paper } },
+            { ChoiceConstants.Spock, new string[] { ChoiceConstants.Scissors, ChoiceConstants.Rock } },
         };
     }
 }
